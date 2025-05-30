@@ -23,55 +23,72 @@ Assicurati di avere installato:
 
 ```bash
 sudo apt install pv
-🚀 Utilizzo
-1. Sposta file dall'hard disk esterno alla memoria locale
-bash
-Copia
-Modifica
+```
+
+---
+
+## 🚀 Utilizzo
+
+### 1. Sposta file dall'hard disk esterno alla memoria locale
+
+```bash
 bash sposta_file.sh --to-local
-2. Sposta file dalla memoria locale all'hard disk esterno (esclude file > 4GB)
-bash
-Copia
-Modifica
+```
+
+### 2. Sposta file dalla memoria locale all'hard disk esterno (esclude file > 4GB)
+
+```bash
 bash sposta_file.sh --to-disk
-3. Pulisce tutte le cartelle vuote da una directory specifica
-bash
-Copia
-Modifica
+```
+
+### 3. Pulisce tutte le cartelle vuote da una directory specifica
+
+```bash
 bash sposta_file.sh --clean-empty-dirs /percorso/della/cartella
-📂 Percorsi predefiniti
+```
+
+---
+
+## 📂 Percorsi predefiniti
+
 Modifica questi valori all'inizio dello script secondo le tue esigenze:
 
-bash
-Copia
-Modifica
+```bash
 HD_PATH="/media/daniele/TOSHIBA"
 LOCAL_PATH="/home/daniele/Documenti/mady"
 ERROR_LOG="/home/daniele/Documenti/errore_spostamento.log"
-📌 Note importanti
-Lo script non sovrascrive file identici, ma elimina l'originale.
+```
 
-Se un file esiste con contenuto diverso, viene copiato con un nuovo nome.
+---
 
-I file troppo grandi per il filesystem FAT32 (oltre 4GB) vengono ignorati durante la copia verso l’hard disk.
+## 📌 Note importanti
 
-Gli errori di permessi vengono gestiti tentando l'uso di sudo.
+- Lo script **non sovrascrive** file identici, ma elimina l'originale.
+- Se un file esiste con contenuto diverso, viene copiato con un nuovo nome.
+- I file troppo grandi per il filesystem FAT32 (oltre 4GB) vengono **ignorati** durante la copia verso l’hard disk.
+- Gli errori di permessi vengono gestiti tentando l'uso di `sudo`.
 
-🧪 Suggerimenti
-Esegui una simulazione preventiva con:
+---
 
-bash
-Copia
-Modifica
-find /origine -type f
-Verifica il log in:
+## 🧪 Suggerimenti
 
-bash
-Copia
-Modifica
-/home/daniele/Documenti/errore_spostamento.log
-📃 Licenza
-Distribuito con licenza MIT.
+- Esegui una simulazione preventiva con:
+  ```bash
+  find /origine -type f
+  ```
+- Verifica il log in:
+  ```bash
+  /home/daniele/Documenti/errore_spostamento.log
+  ```
 
-✍️ Autore
-Daniele – GitHub
+---
+
+## 📃 Licenza
+
+Distribuito con licenza [MIT](LICENSE).
+
+---
+
+## ✍️ Autore
+
+**Daniele** – [GitHub](https://github.com/tuo-username)
